@@ -9,6 +9,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Quick LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick LinguistTools)
 find_package(Qt5 COMPONENTS Core SerialPort REQUIRED)
@@ -16,10 +17,13 @@ find_package(Qt5 COMPONENTS Core SerialPort REQUIRED)
 # set(TS_FILES Font_zh_CN.ts)
 
 # Set OpenCV dirctory
-set(OpenCV_DIR /home/user/Package/opencv-4.6.0/build)
-
-# Set Python essential lib dirctory
-# set(Python_DIR D:/ApplicationData/QtProj/DustbinWithQT5/3rd/python310)
+execute_process(COMMAND hostname OUTPUT_VARIABLE HOSTNAME OUTPUT_STRIP_TRAILING_WHITESPACE)
+# message("my host name : ${HOSTNAME}   ;")
+if(${HOSTNAME} STREQUAL "eden-y9000p")
+    set(OpenCV_DIR /home/eden/Package/opencv-4.6.0/build)
+else()
+    set(OpenCV_DIR /home/user/Package/opencv-4.6.0/build)
+endif()
 
 include_directories(.)
 include_directories(include/)
@@ -38,7 +42,6 @@ set(PROJECT_SOURCES
 find_package(OpenCV 4.6.0 REQUIRED)
 include_directories(${OpenCV_DIR}/include)
 link_directories(${OpenCV_DIR}/lib)
-
 
 # import Python essential lib
 # include_directories(${Python_DIR}/include)
