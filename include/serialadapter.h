@@ -6,6 +6,8 @@
 #include <QtSerialPort/QSerialPort>
 #include <QtSerialPort/QSerialPortInfo>
 
+#include "serialthread.h"
+
 /**
  * 自定义串口功能QML组件
  * 响应点击事件，根据名称属性决定实现何种功能，功能表写在SerialThread中，功能封装
@@ -17,7 +19,6 @@
 struct SerialThreadData
 {   
     int id; // 需要执行的命令的id号（人为规定）
-    QSerialPort p_QSerialPort;
 };
 
 class SerialAdapter : public QQuickItem
@@ -40,12 +41,18 @@ public:
     // Q_INVOKABLE void paw_close(); // 闭合夹爪
     // Q_INVOKABLE void paw_set_clamp_speed(float); // 设置夹持速度
     // Q_INVOKABLE void paw_set_clamp_current_intensity(float); // 设置夹持电流
+
 signals:
     void functionNameChange();
+    
+
+public slots:
+
 
 private:
     QString m_functionName;
     SerialThreadData serialThreadData;
+    SerialThread serialThread;
 };
 
 #endif // SERIALADAPTER_H

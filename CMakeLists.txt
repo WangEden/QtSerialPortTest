@@ -9,16 +9,17 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Quick LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick LinguistTools)
 find_package(Qt5 COMPONENTS Core SerialPort REQUIRED)
 
-# set(TS_FILES Font_zh_CN.ts)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+
+set(TS_FILES Font_zh_CN.ts)
 
 # Set OpenCV dirctory
 execute_process(COMMAND hostname OUTPUT_VARIABLE HOSTNAME OUTPUT_STRIP_TRAILING_WHITESPACE)
-# message("my host name : ${HOSTNAME}   ;")
 if(${HOSTNAME} STREQUAL "eden-y9000p")
     set(OpenCV_DIR /home/eden/Package/opencv-4.6.0/build)
 else()
@@ -30,23 +31,27 @@ include_directories(include/)
 
 set(PROJECT_SOURCES
         src/main.cpp
-        include/camerathread.h src/Device/camerathread.cpp
-        include/serialthread.h src/Device/serialthread.cpp
-        include/imagetransmission.h src/Util/imagetransmission.cpp
-        include/serialadapter.h src/Interface/serialadapter.cpp
+        include/d435i.h src/Device/d435i.cpp
+        include/UR5.h src/Device/UR5.cpp
+        include/RS485.h src/Device/RS485.cpp
+
+        include/camerathread.h src/Thread/camerathread.cpp
+        include/serialthread.h src/Thread/serialthread.cpp
+
+        include/imagetransmission.h src/Components/imagetransmission.cpp
+        include/serialadapter.h src/Components/serialadapter.cpp
+        include/QWidgetRenderer.h src/Components/QWidgetRenderer.cpp
         qml.qrc
         ${TS_FILES}
 )
 
-# import OpenCV lib
 find_package(OpenCV 4.6.0 REQUIRED)
+find_package(realsense2 REQUIRED)
+find_package(Threads REQUIRED)
+find_package(Boost 1.65 REQUIRED COMPONENTS system)
+
 include_directories(${OpenCV_DIR}/include)
 link_directories(${OpenCV_DIR}/lib)
-
-# import Python essential lib
-# include_directories(${Python_DIR}/include)
-# link_directories(${Python_DIR}/lib)
-# find_package(Python 3.10 REQUIRED)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(${PROJECT_NAME}
@@ -76,7 +81,16 @@ else()
 endif()
 
 target_link_libraries(${PROJECT_NAME}
-  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick ${OpenCV_LIBS} Qt5::SerialPort
+    PRIVATE Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Quick
+    PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
+    ${OpenCV_LIBS} 
+    Qt5::SerialPort
+    ${Boost_LIBRARIES} 
+    Threads::Threads 
+    ${OpenCV_LIBS} 
+    realsense2 
+    -lstdc++fs
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
@@ -87,6 +101,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
+include(GNUInstallDirs)
 install(TARGETS ${PROJECT_NAME}
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})

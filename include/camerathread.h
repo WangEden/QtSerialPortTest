@@ -10,6 +10,8 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/videoio.hpp>
 
+#include "d435i.h"
+
 class CameraThread : public QThread
 {
     Q_OBJECT
@@ -36,7 +38,8 @@ private:
     cv::Mat mat_;
     bool is_open_;
     mutable QMutex mat_lock;
-    cv::VideoCapture cap;
+    // cv::VideoCapture cap;
+    Camera camera;
     QImage toQImage(cv::Mat & srcFrom);
 };
 

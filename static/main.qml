@@ -67,7 +67,7 @@ Window {
                         state: "choosed"
                         onTabclick:{
                             if(homeTabBarIcon.state != "choosed"){
-                                page_loader.source="pages/HomeTab.qml"
+                                page_loader.source="pages/page1.qml"
                                 page_loader_animation.start()
                                 homeTabBarIcon.state = "choosed"
                                 checkTabBarIcon.state = "unchoosed"
@@ -94,11 +94,11 @@ Window {
                     Utils.NavigationBar {
                         id:checkTabBarIcon
                         icon: "qrc:/resource/tabBar/check_gray.svg"
-                        text: "查看"
+                        text: "相机"
                         state: "unchoosed"
                         onTabclick:{
                             if(checkTabBarIcon.state != "choosed"){
-                                page_loader.source="pages/CheckTab.qml"
+                                page_loader.source="pages/page2.qml"
                                 page_loader_animation.start()
                                 homeTabBarIcon.state = "unchoosed"
                                 checkTabBarIcon.state = "choosed"
@@ -124,11 +124,11 @@ Window {
                     Utils.NavigationBar {
                         id:storgeTabBarIcon
                         icon: "qrc:/resource/tabBar/storge_gray.svg"
-                        text: "存量"
+                        text: "控制"
                         state: "unchoosed"
                         onTabclick:{
                             if(storgeTabBarIcon.state != "choosed"){
-                                page_loader.source="pages/StorgeTab.qml"
+                                page_loader.source="pages/page3.qml"
                                 page_loader_animation.start()
                                 homeTabBarIcon.state = "unchoosed"
                                 checkTabBarIcon.state = "unchoosed"
@@ -153,11 +153,11 @@ Window {
                     Utils.NavigationBar {
                         id:moreTabBarIcon
                         icon: "qrc:/resource/tabBar/more_gray.svg"
-                        text: "更多"
+                        text: "设置"
                         state: "unchoosed"
                         onTabclick:{
                             if(moreTabBarIcon.state != "choosed"){
-                                page_loader.source="pages/MoreTab.qml"
+                                page_loader.source="pages/page4.qml"
                                 page_loader_animation.start()
                                 homeTabBarIcon.state = "unchoosed"
                                 checkTabBarIcon.state = "unchoosed"
@@ -186,7 +186,7 @@ Window {
             Loader {
                 id:page_loader
                 anchors.fill: parent
-                source: "pages/HomeTab.qml"
+                source: "pages/page1.qml"
                 onStatusChanged: {
 //                    console.log("status:", status)
                 }

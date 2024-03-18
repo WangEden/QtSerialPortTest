@@ -3,29 +3,33 @@
 
 #include <QThread>
 #include <QMutex>
-#include <QtSerialPort/QSerialPort>
-#include <QtSerialPort/QSerialPortInfo>
+#include "RS485.h"
 
 class SerialThread : public QThread
 {
     Q_OBJECT
 public:
+    enum FunctionCode {
+
+    };
+
     SerialThread(QObject * parent = nullptr);
-    void openSerial();
-    void pawInit();
-    void pawSetClampPosition(float); // 设置夹持位置 mm
-    void pawClose(); // 闭合夹爪
-    void pawSetClampSpeed(float); // 设置夹持速度
-    void pawSetClampCurrentIntensity(float); // 设置夹持电流
+    bool openSerialPort();
+    void closeSerialPort();
+    void recvFunctionCode(FunctionCode);
 
 signals:
-    void ReceiveResponse(const QByteArray &data); // 发送命令后受到回应时触发的信号
+    // void ReceiveResponse(const QByteArray &data); // 发送命令后受到回应时触发的信号
+
+public slots:
+
 
 protected:
-    void run() override {
-        QSerialPort serial;
+    void run() override;
 
-    }
+private:
+    RS485ModbusRtuMaster modbusRtuMaster;
+    FunctionCode functionCode;
 
 };
 

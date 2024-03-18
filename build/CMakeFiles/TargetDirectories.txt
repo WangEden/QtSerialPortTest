@@ -1,8 +1,0 @@
-/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build/CMakeFiles/install/strip.dir
-/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build/CMakeFiles/install/local.dir
-/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build/CMakeFiles/install.dir
-/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build/CMakeFiles/list_install_components.dir
-/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build/CMakeFiles/rebuild_cache.dir
-/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build/CMakeFiles/edit_cache.dir
-/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build/CMakeFiles/QtSerialPortTest.dir
-/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build/CMakeFiles/QtSerialPortTest_autogen.dir

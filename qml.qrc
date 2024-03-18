@@ -21,9 +21,10 @@
         <file>resource/pages/morePage/feelback.png</file>
         <file>resource/pages/morePage/pwd.png</file>
         <file>resource/pages/morePage/switch.png</file>
-        <file>static/pages/CheckTab.qml</file>
-        <file>static/pages/MoreTab.qml</file>
-        <file>static/pages/StorgeTab.qml</file>
+        <file>static/pages/page1.qml</file>
+        <file>static/pages/page2.qml</file>
+        <file>static/pages/page3.qml</file>
+        <file>static/pages/page4.qml</file>
         <file>static/components/BatteryPanel.qml</file>
         <file>resource/pages/storegePage/dustbin_mask.png</file>
         <file>resource/pages/storegePage/trash_type_recylce.png</file>
@@ -33,6 +34,5 @@
         <file>resource/pages/homePage/card_1_scene_logo.png</file>
         <file>resource/pages/homePage/card_2_battery_logo.png</file>
         <file>resource/pages/homePage/card_2_battery_logo.svg</file>
-        <file>static/pages/HomeTab.qml</file>
     </qresource>
 </RCC>
