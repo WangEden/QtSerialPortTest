@@ -1,4 +1,3 @@
 # Hashes of file build rules.
-164250c08bc14886d9cc2aae5297eba9 CMakeFiles/DustbinWithQT5_autogen
-2d65b9311e4eceb83f34e3d8a3b483c4 D:/ApplicationData/QtProj/DustbinWithQT5/DustbinWithQT5_zh_CN.ts
-2d0a5f3f59fc56fdc748e52276423c63 DustbinWithQT5_autogen/EWIEGA46WW/qrc_qml.cpp
+cd54461f367cf9834248c86ad8bd34a4 CMakeFiles/QtSerialPortTest_autogen
+e957b0f6a1ea051a7b186a3f2c4c0802 QtSerialPortTest_autogen/EWIEGA46WW/qrc_qml.cpp

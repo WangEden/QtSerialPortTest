@@ -1,0 +1,180 @@
+{
+	"BUILD_DIR" : "/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build/QtSerialPortTest_autogen",
+	"CMAKE_BINARY_DIR" : "/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_SOURCE_DIR" : "/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest",
+	"HEADERS" : 
+	[
+		[
+			"/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/include/camerathread.h",
+			"MU",
+			"6YEA5652QU/moc_camerathread.cpp"
+		],
+		[
+			"/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/include/imagetransmission.h",
+			"MU",
+			"6YEA5652QU/moc_imagetransmission.cpp"
+		],
+		[
+			"/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/include/serialadapter.h",
+			"MU",
+			"6YEA5652QU/moc_serialadapter.cpp"
+		],
+		[
+			"/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/include/serialthread.h",
+			"MU",
+			"6YEA5652QU/moc_serialthread.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build/QtSerialPortTest_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build/QtSerialPortTest_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NETWORK_LIB",
+		"QT_QMLMODELS_LIB",
+		"QT_QML_LIB",
+		"QT_QUICK_LIB",
+		"QT_SERIALPORT_LIB"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest",
+		"/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/include",
+		"/home/user/Package/opencv-4.6.0/build/include",
+		"/home/user/Qt/5.15.2/gcc_64/include",
+		"/home/user/Qt/5.15.2/gcc_64/include/QtCore",
+		"/home/user/Qt/5.15.2/gcc_64/mkspecs/linux-g++",
+		"/home/user/Qt/5.15.2/gcc_64/include/QtQuick",
+		"/home/user/Qt/5.15.2/gcc_64/include/QtQmlModels",
+		"/home/user/Qt/5.15.2/gcc_64/include/QtQml",
+		"/home/user/Qt/5.15.2/gcc_64/include/QtNetwork",
+		"/home/user/Qt/5.15.2/gcc_64/include/QtGui",
+		"/home/user/Package/opencv-4.6.0/build",
+		"/home/user/Package/opencv-4.6.0/include",
+		"/home/user/Package/opencv-4.6.0/modules/core/include",
+		"/home/user/Package/opencv-4.6.0/modules/flann/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/hdf/include",
+		"/home/user/Package/opencv-4.6.0/modules/imgproc/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/intensity_transform/include",
+		"/home/user/Package/opencv-4.6.0/modules/ml/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/phase_unwrapping/include",
+		"/home/user/Package/opencv-4.6.0/modules/photo/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/plot/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/quality/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/reg/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/surface_matching/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/xphoto/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/alphamat/include",
+		"/home/user/Package/opencv-4.6.0/modules/dnn/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/dnn_superres/include",
+		"/home/user/Package/opencv-4.6.0/modules/features2d/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/freetype/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/fuzzy/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/hfs/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/img_hash/include",
+		"/home/user/Package/opencv-4.6.0/modules/imgcodecs/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/line_descriptor/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/saliency/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/text/include",
+		"/home/user/Package/opencv-4.6.0/modules/videoio/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/wechat_qrcode/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/barcode/include",
+		"/home/user/Package/opencv-4.6.0/modules/calib3d/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/datasets/include",
+		"/home/user/Package/opencv-4.6.0/modules/highgui/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/mcc/include",
+		"/home/user/Package/opencv-4.6.0/modules/objdetect/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/rapid/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/rgbd/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/shape/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/structured_light/include",
+		"/home/user/Package/opencv-4.6.0/modules/ts/include",
+		"/home/user/Package/opencv-4.6.0/modules/video/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/videostab/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/xfeatures2d/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/ximgproc/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/xobjdetect/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/aruco/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/bgsegm/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/bioinspired/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/ccalib/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/dnn_objdetect/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/dpm/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/face/include",
+		"/home/user/Package/opencv-4.6.0/modules/gapi/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/optflow/include",
+		"/home/user/Package/opencv-4.6.0/modules/stitching/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/superres/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/tracking/include",
+		"/home/user/Package/opencv-4.6.0/opencv_contrib-4.6.0/modules/stereo/include",
+		"/home/user/Qt/5.15.2/gcc_64/include/QtSerialPort",
+		"/usr/include",
+		"/usr/include/c++/9",
+		"/usr/include/x86_64-linux-gnu/c++/9",
+		"/usr/include/c++/9/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/9/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : true,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/g++",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build/QtSerialPortTest_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 16,
+	"PARSE_CACHE_FILE" : "/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build/CMakeFiles/QtSerialPortTest_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/home/user/Qt/5.15.2/gcc_64/bin/moc",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 5,
+	"SETTINGS_FILE" : "/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/build/CMakeFiles/QtSerialPortTest_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/src/Device/camerathread.cpp",
+			"MU"
+		],
+		[
+			"/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/src/Device/serialthread.cpp",
+			"MU"
+		],
+		[
+			"/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/src/Interface/serialadapter.cpp",
+			"MU"
+		],
+		[
+			"/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/src/Util/imagetransmission.cpp",
+			"MU"
+		],
+		[
+			"/home/user/Projects/WYD/QtSerialPortTest/QtSerialPortTest/src/main.cpp",
+			"MU"
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

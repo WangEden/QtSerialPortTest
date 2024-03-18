@@ -64,6 +64,11 @@
         "variant": "cpp",
         "qquickitem": "cpp",
         "qobject": "cpp",
-        "qthread": "cpp"
-    }
+        "qthread": "cpp",
+        "qserialport": "cpp"
+    },
+    "cSpell.words": [
+        "INVOKABLE",
+        "SERIALADAPTER"
+    ]
 }
