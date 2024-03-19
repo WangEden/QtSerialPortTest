@@ -231,7 +231,7 @@ Item {
                                             color: Qt.rgba(1, 1, 1, 1)
                                             font.bold: true
                                             fontSizeMode: Text.Fit
-                                            font.family: "微软雅黑"
+                                            font.family: "DejaVu Sans"
                                             text: "基本"
                                         }
                                         Label{
@@ -241,7 +241,7 @@ Item {
                                             color: Qt.rgba(1, 1, 1, 0.4)
                                             font.bold: false
                                             fontSizeMode: Text.Fit
-                                            font.family: "微软雅黑"
+                                            font.family: "DejaVu Sans"
                                             text: "蓝牙"
                                         }
                                     }
@@ -273,7 +273,7 @@ Item {
                                         Utils.SlideSwitch {
                                             optionNum: 4
                                             current_index:3
-                                            optionName: ['关闭', '开启', '自动', '呃呃']
+                                            optionName: ['关闭', '开启', '自动', '手动']
                                         }
                                     }
                                 }
@@ -288,7 +288,9 @@ Item {
                                         height: 50
                                         radius: width / 2
                                         //
-                                        Button {
+                                        Utils.CandyButton {
+                                            radius: height / 2
+                                            text: "退出"
                                             anchors.fill: parent
                                             onClicked: {
                                                 Qt.quit()

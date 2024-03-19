@@ -25,7 +25,7 @@
                 }
             ],
             "preLaunchTask": "C/C++: g++.exe build active file",
-            "visualizerFile": "/home/eden/.config/Code/User/workspaceStorage/ca5aa52f2c1d43c6e29f4ae7457c896b/tonka3000.qtvsctools/qt.natvis.xml"
+            "visualizerFile": "/home/eden/.config/Code/User/workspaceStorage/bc44b402ef09d1de1d862b35821629d9/tonka3000.qtvsctools/qt.natvis.xml"
         }
     ],
     "version": "2.0.0"

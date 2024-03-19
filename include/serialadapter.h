@@ -16,25 +16,37 @@
  *  ---> 收到答复，传递相关数据回主线程 ---> 关闭串口 ---> 关闭子线程
 */
 
-struct SerialThreadData
-{   
-    int id; // 需要执行的命令的id号（人为规定）
-};
-
 class SerialAdapter : public QQuickItem
 {
     Q_OBJECT
     Q_PROPERTY(QString functionName READ functionName WRITE setFunctionName NOTIFY functionNameChange)
+    Q_PROPERTY(bool rewriteFlag READ rewriteFlag WRITE setRewriteFlag NOTIFY rewriteFlagChange) // 决定是否重写按钮功能
+    Q_PROPERTY(int functionCode READ functionCode WRITE setFunctionCode NOTIFY functionCodeChange) // 决定是否重写按钮功能
 
 public:
+    enum FunctionCode {
+
+    };
+
     explicit SerialAdapter(QQuickItem *parent = nullptr);
 
     QString functionName() const;
     void setFunctionName(const QString &text);
 
-    Q_INVOKABLE void sendCommand();
+    bool rewriteFlag() const;
+    void setRewriteFlag(const bool &flag);
+
+    int functionCode() const;
+    void setFunctionCode(const int &value);
+
+    // Q_INVOKABLE void sendCommand();
 
     // 用于qml界面点击事件触发时调用
+    Q_INVOKABLE void runFunction();
+
+    void defaultFunction();
+    virtual void rewriteFunction();
+
     // Q_INVOKABLE void open_serial();
     // Q_INVOKABLE void paw_init();
     // Q_INVOKABLE void paw_set_clamp_position(float); // 设置夹持位置 mm
@@ -44,15 +56,18 @@ public:
 
 signals:
     void functionNameChange();
-    
+    void rewriteFlagChange();
+    void functionCodeChange();
 
 public slots:
 
 
 private:
     QString m_functionName;
-    SerialThreadData serialThreadData;
-    SerialThread serialThread;
+    bool m_rewriteFlag;
+    int m_functionCode;
+    SerialThread * serialThread = nullptr;
+
 };
 
 #endif // SERIALADAPTER_H

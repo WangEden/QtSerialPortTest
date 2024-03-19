@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+48e1dec3f3d3951168c9799a16004939 ../Font_zh_CN.ts
+1881c632987e76cca2864b769fc2fc46 CMakeFiles/QtSerialPortTest_autogen
+8b2ee373e91211ff93d672660dd8c967 QtSerialPortTest_autogen/EWIEGA46WW/qrc_qml.cpp

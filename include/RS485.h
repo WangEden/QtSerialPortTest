@@ -20,8 +20,7 @@ public:
         std::vector<uint8_t> data;   // 数据字段，使用vector来动态管理数据大小
         uint16_t crc;                // CRC校验值
 
-        // 可以根据需要添加构造函数、方法等
-        ModbusRTUFrame(uint8_t addr, uint8_t funcCode, 
+        ModbusRTUFrame(uint8_t addr, uint8_t funcCode, // 构造函数
             const std::vector<uint8_t>& dataVec, uint16_t crcCode)
             : address(addr), functionCode(funcCode), data(dataVec), crc(crcCode) {
         }
@@ -52,8 +51,13 @@ public:
     };
 
     RS485ModbusRtuMaster();
+    RS485ModbusRtuMaster(const QString & portName,
+        int baudRate,
+        QSerialPort::DataBits dataBits,
+        QSerialPort::Parity parity,
+        QSerialPort::StopBits stopBits);
     ~RS485ModbusRtuMaster();
-    bool openPort(const QString &, int, QSerialPort::Parity);
+    bool openPort();
     void closePort();
 
     // 功能函数
@@ -77,11 +81,20 @@ public:
 
     vector<uint8_t> pawGetResponse();
 
+    void sendCommand(vector<uint8_t> &data);
+    vector<uint8_t> & getResponse(void);
+    template< typename T>
+    T parseData();
+
 
 private:
     QSerialPort serial;
 
-
+    QString portName;
+    int baudRate = QSerialPort::Baud115200;
+    QSerialPort::DataBits dataBits = QSerialPort::Data8;
+    QSerialPort::Parity parity = QSerialPort::NoParity;
+    QSerialPort::StopBits stopBits = QSerialPort::OneStop;
 
 };
 #endif

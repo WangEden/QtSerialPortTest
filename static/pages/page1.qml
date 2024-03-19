@@ -224,7 +224,7 @@ Item {
                             text: qsTr("电池电量")
                             anchors.centerIn: parent
                             verticalAlignment: Text.AlignHCenter
-                            font.family: "微软雅黑"
+                            font.family: "DejaVu Sans"
                             font.bold: true
                             font.pixelSize: 20
                             font.weight: Font.DemiBold

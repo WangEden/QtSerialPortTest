@@ -10,15 +10,26 @@ RS485ModbusRtuMaster::~RS485ModbusRtuMaster()
     closePort();
 }
 
-bool RS485ModbusRtuMaster::openPort(const QString &portName, 
+RS485ModbusRtuMaster::RS485ModbusRtuMaster(const QString & portName,
     int baudRate = QSerialPort::Baud115200,
-    QSerialPort::Parity parity = QSerialPort::NoParity)
+    QSerialPort::DataBits dataBits = QSerialPort::Data8,
+    QSerialPort::Parity parity = QSerialPort::NoParity,
+    QSerialPort::StopBits stopBits = QSerialPort::OneStop)
 {
-    this->serial.setPortName(portName);
-    this->serial.setBaudRate(baudRate);
-    this->serial.setDataBits(QSerialPort::Data8);
-    this->serial.setParity(parity);
-    this->serial.setStopBits(QSerialPort::OneStop);
+    this->portName = portName;
+    this->baudRate = baudRate;
+    this->dataBits = dataBits;
+    this->parity = parity;
+    this->stopBits = stopBits;
+}
+
+bool RS485ModbusRtuMaster::openPort()
+{
+    this->serial.setPortName(this->portName);
+    this->serial.setBaudRate(this->baudRate);
+    this->serial.setDataBits(this->dataBits);
+    this->serial.setParity(this->parity);
+    this->serial.setStopBits(this->stopBits);
     return this->serial.open(QIODevice::ReadWrite);
 }
 
@@ -102,3 +113,22 @@ void RS485ModbusRtuMaster::pawSetIOMode(bool turnOn) // 设置IO模式打开/关
 {
 
 }
+
+void RS485ModbusRtuMaster::sendCommand(vector<uint8_t> &data)
+{
+    // 检查串口是否打开
+    if (!this->serial.isOpen()) {
+        openPort();
+    }
+    ModbusRTUFrame frame(0x01, 0x06, data, 0xD821);
+    QByteArray sendData;
+    sendData.append(frame.address);
+    sendData.append(frame.functionCode);
+    for (uint8_t byte: frame.data) {
+        sendData.append(byte);
+    }
+    sendData.append(static_cast<uint8_t>(frame.crc & 0xFF)); // 获取底字节
+    sendData.append((frame.crc >> 8) & 0xFF); // 获取高字节
+    this->serial.write(sendData);
+}
+

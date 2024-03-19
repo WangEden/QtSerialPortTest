@@ -3,6 +3,8 @@ import QtQuick.Controls 2.4
 import QtGraphicalEffects 1.15
 import "../components" as Utils
 import ImageTransmission 1.0
+import SerialAdapter 1.0
+
 
 Item {
     id: checkTab
@@ -26,6 +28,27 @@ Item {
                 // border.color: "black"
                 color: "transparent"
                 anchors.left: parent.left
+
+                Utils.CandyButton {
+                    width: 0.31 * parent.width
+                    height: 0.5 * parent.height
+                    anchors.centerIn: parent
+                    radius: height / 2
+
+                    SerialAdapter {
+                        id: serialAdapter
+                        functionName: ""
+                        functionCode: 0
+                        rewriteFlag: false
+                        
+                    }
+
+                    onClicked: {
+                        serialAdapter.runFunction();
+                    }
+
+                }
+
                 // Rectangle {
                 //     id: checkTab_panel_left_1
                 //     width: parent.width
@@ -223,9 +246,10 @@ Item {
 //                            id: camera_window
 //                            anchors.fill:parent
 //                        }
-                        // 点击开启摄像头
                         Row {
-                            Button {
+                            // 点击开启摄像头
+                            Utils.CandyButton {
+                                radius: height / 2
                                 text: "开启"
                                 onClicked: {
                                     if(loader.sourceComponent == null) {
@@ -237,7 +261,8 @@ Item {
                                 }
                             }
                             // 点击关闭摄像头
-                            Button {
+                            Utils.CandyButton {
+                                radius: height / 2
                                 text:"关闭"
                                 onClicked: {
                                     timer.stop()

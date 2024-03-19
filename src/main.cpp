@@ -58,6 +58,7 @@ int main(int argc, char *argv[])
     // 注册对象
     {
         qmlRegisterType<ImageTransmission>("ImageTransmission", 1, 0, "ImageTransmission");
+        qmlRegisterType<SerialAdapter>("SerialAdapter", 1, 0, "SerialAdapter");
         qmlRegisterType<QWidgetRenderer>("ManualQWidgets", 1, 0, "QWidgetRenderer");
     }
 

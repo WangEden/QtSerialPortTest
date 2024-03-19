@@ -34,5 +34,6 @@
         <file>resource/pages/homePage/card_1_scene_logo.png</file>
         <file>resource/pages/homePage/card_2_battery_logo.png</file>
         <file>resource/pages/homePage/card_2_battery_logo.svg</file>
+        <file>static/components/CandyButton.qml</file>
     </qresource>
 </RCC>

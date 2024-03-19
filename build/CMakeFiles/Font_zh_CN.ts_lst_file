@@ -1,0 +1,4 @@
+-I/home/eden/Package/opencv-4.6.0/build/include
+-I/home/eden/Project/QtSerialPortTest/QtSerialPortTest/include
+-I/home/eden/Project/QtSerialPortTest/QtSerialPortTest/.
+/home/eden/Project/QtSerialPortTest/QtSerialPortTest
