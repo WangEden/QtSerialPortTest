@@ -83,13 +83,19 @@ public:
 
     RS485ModbusRtuMaster();
     RS485ModbusRtuMaster(const QString & portName,
-        int baudRate,
+        QSerialPort::BaudRate baudRate,
         QSerialPort::DataBits dataBits,
         QSerialPort::Parity parity,
         QSerialPort::StopBits stopBits);
     ~RS485ModbusRtuMaster();
     bool openPort();
     void closePort();
+
+    void setPortName(const QString & portName);
+    void setBaudRate(QSerialPort::BaudRate baudRate);
+    void setDataBits(QSerialPort::DataBits );
+    void setParity(QSerialPort::Parity);
+    void setStopBits(QSerialPort::StopBits);
 
     // 功能函数 06 写入单个寄存器
     void pawManualInitialize(); // 手动初始化
@@ -135,7 +141,7 @@ private:
 
     QSerialPort serial;
     QString portName;
-    int baudRate = QSerialPort::Baud115200;
+    QSerialPort::BaudRate baudRate = QSerialPort::Baud115200;
     QSerialPort::DataBits dataBits = QSerialPort::Data8;
     QSerialPort::Parity parity = QSerialPort::NoParity;
     QSerialPort::StopBits stopBits = QSerialPort::OneStop;

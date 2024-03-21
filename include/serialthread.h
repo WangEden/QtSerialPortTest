@@ -28,7 +28,7 @@ protected:
     void run() override;
 
 private:
-    RS485ModbusRtuMaster modbusRtuMaster;
+    RS485ModbusRtuMaster * modbusRtuMaster;
     FunctionCode functionCode;
 
 };

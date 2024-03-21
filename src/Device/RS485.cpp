@@ -11,7 +11,7 @@ RS485ModbusRtuMaster::~RS485ModbusRtuMaster()
 }
 
 RS485ModbusRtuMaster::RS485ModbusRtuMaster(const QString & portName,
-    int baudRate = QSerialPort::Baud115200,
+    QSerialPort::BaudRate baudRate = QSerialPort::Baud115200,
     QSerialPort::DataBits dataBits = QSerialPort::Data8,
     QSerialPort::Parity parity = QSerialPort::NoParity,
     QSerialPort::StopBits stopBits = QSerialPort::OneStop)
@@ -31,6 +31,27 @@ bool RS485ModbusRtuMaster::openPort()
     this->serial.setParity(this->parity);
     this->serial.setStopBits(this->stopBits);
     return this->serial.open(QIODevice::ReadWrite);
+}
+
+void RS485ModbusRtuMaster::setPortName(const QString & portName) 
+{
+    this->portName = portName;
+}
+void RS485ModbusRtuMaster::setBaudRate(QSerialPort::BaudRate baudRate)
+{
+    this->baudRate = baudRate;
+}
+void RS485ModbusRtuMaster::setDataBits(QSerialPort::DataBits dataBits)
+{
+    this->dataBits = dataBits;
+}
+void RS485ModbusRtuMaster::setParity(QSerialPort::Parity parity)
+{
+    this->parity = parity;
+}
+void RS485ModbusRtuMaster::setStopBits(QSerialPort::StopBits stopBits)
+{
+    this->stopBits = stopBits;
 }
 
 void RS485ModbusRtuMaster::closePort()
