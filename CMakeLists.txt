@@ -9,6 +9,9 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# 指明编译时需要链接到的Qt安装目录，避免链接到其他库提供的Qt库
+set(CMAKE_PREFIX_PATH "/opt/Qt/5.15.2/gcc_64")
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Quick LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick LinguistTools)
 find_package(Qt5 COMPONENTS Core SerialPort REQUIRED)

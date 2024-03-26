@@ -1,4 +1,5 @@
 #include "RS485.h"
+#include <iostream>
 
 RS485ModbusRtuMaster::RS485ModbusRtuMaster()
 {

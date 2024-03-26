@@ -7,7 +7,6 @@
 
 #include <qobjectdefs.h>
 #include <vector>
-#include <iostream>
 #include <cstdint> // for uint8_t and uint16_t
 
 using namespace std;
