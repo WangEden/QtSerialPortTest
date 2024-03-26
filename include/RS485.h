@@ -59,6 +59,7 @@ public:
         ClampClose = 0x0001,
     };
 
+    // 一些功能的寄存器起始地址
     enum RegisterStartAddr {
         RegisterAddrForInit = 0x0000,
         RegisterAddrForSetClampPosition = 0x0002,

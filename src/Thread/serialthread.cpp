@@ -8,11 +8,17 @@ SerialThread::SerialThread(QObject * parent) : QThread(parent)
         QSerialPort::Data8,
         QSerialPort::NoParity,
         QSerialPort::OneStop
-    );  
-    
+    );
+    this->modbusRtuMaster = &master;
+}
+
+SerialThread::~SerialThread()
+{
+    delete this->modbusRtuMaster;
+    this->modbusRtuMaster = nullptr;
 }
 
 void SerialThread::run() 
 {
-
+    
 }

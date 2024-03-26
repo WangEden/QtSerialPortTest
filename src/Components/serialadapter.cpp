@@ -5,6 +5,12 @@ SerialAdapter::SerialAdapter(QQuickItem * parent): QQuickItem(parent)
 
 }
 
+SerialAdapter::~SerialAdapter()
+{
+    this->serialThread->requestInterruption();
+    this->serialThread->wait();
+}
+
 // qml属性functionName的相关设置
 QString SerialAdapter::functionName() const 
 {
@@ -60,7 +66,9 @@ void SerialAdapter::runFunction()
 
 void SerialAdapter::defaultFunction()
 {
+    this->serialThread = new SerialThread(this);
     
+
 }
 
 void SerialAdapter::rewriteFunction()

@@ -29,6 +29,7 @@ public:
     };
 
     explicit SerialAdapter(QQuickItem *parent = nullptr);
+    ~SerialAdapter();
 
     QString functionName() const;
     void setFunctionName(const QString &text);

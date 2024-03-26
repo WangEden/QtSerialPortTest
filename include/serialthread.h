@@ -14,6 +14,7 @@ public:
     };
 
     SerialThread(QObject * parent = nullptr);
+    ~SerialThread();
     bool openSerialPort();
     void closeSerialPort();
     void recvFunctionCode(FunctionCode);
@@ -28,7 +29,7 @@ protected:
     void run() override;
 
 private:
-    RS485ModbusRtuMaster * modbusRtuMaster;
+    RS485ModbusRtuMaster * modbusRtuMaster = nullptr;
     FunctionCode functionCode;
 
 };
